@@ -1,0 +1,15 @@
+---
+
+- name: Send slack notification
+  slack:
+    token: '{{ notify_slack_token }}'
+    username: "{{ notify_user }}"
+    attachments:
+      - title: "{{ notify_title | default('') }}"
+        text: "{{ notify_text | default('') }}"
+        color: "{{ notify_color }}"
+        fields: "{{ notify_fields | default('') }}"
+  delegate_to: localhost
+  run_once: true
+  changed_when: false
+  when: notify_enabled

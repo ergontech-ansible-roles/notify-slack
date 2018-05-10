@@ -1,0 +1,11 @@
+---
+
+notify_enabled: true
+notify_user: Ansible Bot
+notify_env: No environment name set
+notify_slack_token: ""
+
+#Color of message. Allowed values: normal, good, warning, danger
+notify_color: normal
+
+notify_fields: ""
