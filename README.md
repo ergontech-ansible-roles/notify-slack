@@ -36,7 +36,7 @@ Use Role
 ```
 # requirments.yml
 
-- src: https://github.com/ergontech-ansible-roles/notify-slack-role
+- src: https://github.com/ergontech-ansible-roles/slack-notify-role
   version: master
   name: notify-slack
 ```
