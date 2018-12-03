@@ -1,0 +1,15 @@
+---
+
+- name: Notify Deployment Start
+  set_fact:
+    notify_color: normal
+    notify_title: DEPLOYMENT TRIGGERED
+    notify_fields:
+      - title: Environment
+        value: "{{ notify_env }}"
+        short: True
+      - title: Branch
+        value: "{{ deploy_hash }}"
+        short: True
+
+- include_tasks: main.yml

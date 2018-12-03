@@ -1,0 +1,8 @@
+---
+
+- name: Notify Deployment Failed
+  set_fact:
+    notify_color: danger
+    notify_title: DEPLOYMENT FAILED
+
+- import_tasks: main.yml
