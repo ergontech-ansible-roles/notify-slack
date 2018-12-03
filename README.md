@@ -34,9 +34,25 @@ Use Role
 ----------------
 
 ```
+#Playbook
+- hosts: all
+  gather_facts: no
+  pre_tasks:
+    - block:
+      - include_role:
+          name: slack-notify
+          tasks_from: notify-begin-deployment.yml
+        ...
+      rescue:
+        - include_role:
+            name: slack-notify
+            tasks_from: notify-deploy-failure.yml
+```
+
+```
 # requirments.yml
 
-- src: https://github.com/ergontech-ansible-roles/slack-notify-role
+- src: https://github.com/ergontech-ansible-roles/notify-slack
   version: master
   name: notify-slack
 ```
