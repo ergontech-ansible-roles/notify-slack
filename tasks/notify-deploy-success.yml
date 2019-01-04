@@ -1,0 +1,8 @@
+---
+
+- name: Notify Deployment Complete
+  set_fact:
+    notify_color: good
+    notify_title: DEPLOYMENT COMPLETE
+
+- include_tasks: main.yml
