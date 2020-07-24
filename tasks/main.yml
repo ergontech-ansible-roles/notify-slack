@@ -12,4 +12,6 @@
   delegate_to: localhost
   run_once: true
   changed_when: false
-  when: notify_enabled
+  become: no
+  ignore_errors: yes
+  when: notify_enabled|bool
